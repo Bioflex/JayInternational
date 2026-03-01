@@ -1,0 +1,29 @@
+/* ===================== */
+/* ENTITIES HERO SECTION */
+/* ===================== */
+
+.entities-hero {
+  background: #dc3545;
+  min-height: 40vh;
+  padding-top: 120px; /* prevents fixed header overlap */
+  padding-bottom: 60px;
+}
+
+/* ===================== */
+/* ENTITY CARD STYLING */
+/* ===================== */
+
+.entity-card {
+  transition: all 0.3s ease;
+}
+
+.entity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.logo-placeholder {
+  min-height: 220px;
+  border: 2px dashed #dee2e6;
+  border-radius: 12px;
+}

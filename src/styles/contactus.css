@@ -1,0 +1,30 @@
+/* ================= HERO ================= */
+
+.contact-hero {
+  background: #dc3545;
+  min-height: 40vh;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+/* ================= CONTACT INFO ================= */
+
+.contact-divider {
+  width: 60px;
+  height: 3px;
+  background: #dc3545;
+}
+
+/* ================= FORM ================= */
+
+.contact-form-wrapper {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #dc3545;
+}

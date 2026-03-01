@@ -1,0 +1,40 @@
+/* ================= HERO ================= */
+
+.customers-hero {
+  background: #dc3545;
+  min-height: 40vh;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+/* ================= GRID ================= */
+
+.customers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  align-items: center;
+}
+
+.customer-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.customer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.customer-logo {
+  max-height: 70px;
+  max-width: 100%;
+  object-fit: contain;
+}

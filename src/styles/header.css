@@ -1,0 +1,113 @@
+:root {
+  --brand-red: #C4161C;
+  --brand-dark: #111111;
+  --glass-white: rgba(255, 255, 255, 0.95);
+}
+
+.custom-navbar {
+  padding: 1.5rem 0;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.navbar-scrolled {
+  padding: 0.8rem 0;
+  background: var(--glass-white);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+//* 1. Default state (Transparent Header on Red Background) */
+.custom-navbar:not(.navbar-scrolled) .nav-custom-link {
+  color: white !important;
+}
+
+/* 2. Scrolled state (White Header on White Background) */
+.navbar-scrolled .nav-custom-link {
+  color: var(--brand-dark) !important;
+}
+
+/* 3. Underline color logic */
+.custom-navbar:not(.navbar-scrolled) .nav-custom-link::after {
+  background-color: white; /* White underline on red background */
+}
+
+.navbar-scrolled .nav-custom-link::after {
+  background-color: var(--brand-red); /* Red underline on white background */
+}
+
+/* 4. Refined Logo Filter Logic */
+.brand-logo {
+  height: 100px; /* Base height */
+  transition: all 0.3s ease;
+}
+
+.brand-logo.logo-white {
+  filter: brightness(0) invert(1); /* Forces logo to pure white */
+}
+
+.navbar-scrolled .brand-logo {
+  height: 90px;
+  filter: none; /* Returns to original red */
+}
+
+/* --- NAV LINKS & UNDERLINE --- */
+.nav-custom-link {
+  color: var(--brand-dark) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 1.2rem;
+  position: relative; /* Required for absolute underline */
+  padding: 5px 0 !important;
+}
+
+/* The Underline Animation */
+.nav-custom-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--brand-red);
+  transition: width 0.3s ease;
+}
+
+.nav-custom-link:hover::after,
+.active-link::after {
+  width: 100%; /* Full width underline on hover/active */
+}
+
+/* --- CTA BUTTON --- */
+.nav-cta-button {
+  background: var(--brand-red) !important;
+  color: white !important;
+  padding: 10px 25px !important;
+  border-radius: 4px; /* Squarer for a more corporate/Wix look */
+  font-weight: 600;
+  margin-left: 1.5rem;
+  transition: transform 0.3s ease, background 0.3s ease !important;
+}
+
+.nav-cta-button:hover {
+  transform: translateY(-2px);
+  background: #a31217 !important;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: white;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+  }
+  .nav-custom-link { margin: 10px 0; }
+  .nav-custom-link::after { display: none; } /* Hide underline on mobile for cleaner look */
+}
+
+.brand-logo {
+  filter: brightness(1.05) contrast(1.1);
+}
